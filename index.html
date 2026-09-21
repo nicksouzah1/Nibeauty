@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NI BEAUTY</title>
+
+    <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8f7f8;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+
+        /* CABEÇALHO */
+
+        header {
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            background-color: white;
+        }
+
+        .topo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 170px;
+            height: auto;
+        }
+
+
+        /* BARRA DE BUSCA */
+
+        .busca {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .busca input {
+            width: 500px;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        .btn-busca {
+            padding: 15px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+        }
+
+        .btn-busca:hover {
+            background-color: #f8edc9;
+            color: black;
+        }
+
+
+        /* MENU */
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #b59b55;
+        }
+
+        hr {
+            border-color: black;
+            margin: 0;
+        }
+
+
+        /* PARTE PRINCIPAL */
+
+        main {
+            text-align: center;
+            padding: 60px 40px;
+            background-color: #f8f7f8;
+        }
+
+        main h3 {
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+
+        main h1 {
+            font-size: 50px;
+            margin-top: 5px;
+        }
+
+        .selo-desconto {
+            background-color: #f8edc9;
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+
+        /* SEÇÃO DOS CARDS */
+
+        .secao-cards {
+            background-color: #000000;
+            padding: 60px 40px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+
+        /* CARD */
+
+        .card {
+            background-color: #111111;
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+
+        /* IMAGEM DO CARD */
+
+        .card img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+
+        /* TEXTOS DO CARD */
+
+        .card h4 {
+            color: white;
+            margin-top: 15px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: white;
+            line-height: 1.5;
+        }
+
+        .card a {
+            color: #f8edc9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+
+        /* SEÇÃO SOBRE NÓS */
+
+        .sobre {
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.65),
+                rgba(0, 0, 0, 0.65)
+            ), url("nicoletrabalho.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+
+        /* TEXTO SOBRE NÓS */
+
+        .sobre-texto {
+            max-width: 650px;
+            margin: auto;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .sobre-texto h2 {
+            font-size: 35px;
+            margin-top: 0;
+            color: #f8edc9;
+        }
+
+        .sobre-texto p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+
+        /* BOTÃO SOBRE NÓS */
+
+        .botao-sobre {
+            display: inline-block;
+            background-color: #f8edc9;
+            color: black;
+            text-decoration: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .botao-sobre:hover {
+            background-color: white;
+        }
+
+
+        /* GUIA RÁPIDO */
+
+        .guia-rapido {
+            background-color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .guia-rapido h2 {
+            font-size: 35px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .guia-rapido > p {
+            color: #555555;
+            margin-bottom: 40px;
+        }
+
+        .passos-guia {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .passo {
+            background-color: black;
+            color: white;
+            width: 230px;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .passo:hover {
+            transform: translateY(-5px);
+        }
+
+        .numero {
+            background-color: #f8edc9;
+            color: black;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .passo h3 {
+            margin-bottom: 15px;
+        }
+
+        .passo p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #eeeeee;
+        }
+
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        footer h2 {
+            color: #f8edc9;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #dddddd;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #f8edc9;
+        }
+
+        .rodape-linha {
+            border-color: #333333;
+            margin: 25px auto;
+            max-width: 800px;
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .topo {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .logo {
+                width: 130px;
+            }
+
+            .busca {
+                position: static;
+                transform: none;
+                margin-top: 20px;
+            }
+
+            .busca input {
+                width: 60%;
+            }
+
+            main {
+                padding: 50px 20px;
+            }
+
+            main h1 {
+                font-size: 35px;
+            }
+
+            .sobre-texto {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="topo">
+
+            <img
+                src="logonibeauty.jpg"
+                alt="NI Beauty"
+                class="logo"
+            >
+
+            <div class="busca">
+
+                <input
+                    type="text"
+                    placeholder="Buscar serviços de Nicole"
+                >
+
+                <button class="btn-busca">
+                    BUSCAR
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav>
+
+            <a href="#">HOME</a>
+
+            <a href="#servicos">SERVIÇOS</a>
+
+            <a href="#sobre">SOBRE NÓS</a>
+
+            <a href="https://maps.app.goo.gl/gwCupwrdpCSrw7Bz7"
+               target="_blank">
+                LOCALIZAÇÃO
+            </a>
+
+            <a href="#guia">
+                GUIA RÁPIDO
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <hr>
+
+
+    <!-- PARTE PRINCIPAL -->
+
+    <main>
+
+        <h3>
+            Realce sua beleza natural com nossas extensões de cílios personalizadas!
+        </h3>
+
+        <h1>
+            BELEZA SEM PADRÃO
+        </h1>
+
+        <a href="#servicos" class="selo-desconto">
+            CONHEÇA OS MEUS SERVIÇOS
+        </a>
+
+    </main>
+
+
+    <!-- SERVIÇOS -->
+
+    <section class="secao-cards" id="servicos">
+
+
+        <!-- CARD 1 -->
+
+        <article class="card">
+
+            <img
+                src="designp.jpg"
+                alt="Design Personalizado"
+            >
+
+            <h4>DESIGN PERSONALIZADO</h4>
+
+            <p>
+                Para quem gosta de manter a sobrancelha perfeita.
+            </p>
+
+            <a href="https://wa.me/message/GGWSOWYFMJSHF1"
+               target="_blank">
+                QUERO AGENDAR O MEU HORÁRIO
+            </a>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+
+        <article class="card">
+
+            <img
+                src="henna.jpg"
+                alt="Henna"
+            >
+
+            <h4>HENNA</h4>
+
+            <p>
+                Ideal para quem gosta de sobrancelha mais marcada.
+            </p>
+
+            <a href="https://wa.me/message/GGWSOWYFMJSHF1"
+               target="_blank">
+                QUERO AGENDAR O MEU HORÁRIO
+            </a>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+
+        <article class="card">
+
+            <img
+                src="tintura.jpg"
+                alt="Tintura"
+            >
+
+            <h4>TINTURA</h4>
+
+            <p>
+                Ideal para quem gosta da sobrancelha mais natural,
+                mas com um leve toque de cor.
+            </p>
+
+            <a href="https://wa.me/message/GGWSOWYFMJSHF1"
+               target="_blank">
+                QUERO AGENDAR O MEU HORÁRIO
+            </a>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+
+        <article class="card">
+
+            <img
+                src="fioafio.jpg"
+                alt="Fio a Fio"
+            >
+
+            <h4>FIO A FIO</h4>
+
+            <p>
+                Ideal para quem gosta de naturalidade,
+                com efeito rímel e bem delicado.
+            </p>
+
+            <a href="https://wa.me/message/GGWSOWYFMJSHF1"
+               target="_blank">
+                QUERO AGENDAR O MEU HORÁRIO
+            </a>
+
+        </article>
+
+
+        <!-- CARD 5 -->
+
+        <article class="card">
+
+            <img
+                src="brasileiro.jpg"
+                alt="Volume Brasileiro"
+            >
+
+            <h4>VOLUME BRASILEIRO</h4>
+
+            <p>
+                Ideal para quem gosta de um olhar natural,
+                porém com um leve volume.
+            </p>
+
+            <a href="https://wa.me/message/GGWSOWYFMJSHF1"
+               target="_blank">
+                QUERO AGENDAR O MEU HORÁRIO
+            </a>
+
+        </article>
+
+
+    </section>
+
+
+    <!-- SOBRE NÓS -->
+
+    <section class="sobre" id="sobre">
+
+        <div class="sobre-texto">
+
+            <h2>SOBRE A NI BEAUTY</h2>
+
+            <p>
+                Na NI BEAUTY, cada atendimento é pensado para realçar
+                a sua beleza natural e deixar você ainda mais confiante.
+            </p>
+
+            <p>
+                Trabalhamos com técnicas personalizadas, respeitando
+                o estilo e a preferência de cada cliente.
+            </p>
+
+            <a
+                href="https://wa.me/message/GGWSOWYFMJSHF1"
+                target="_blank"
+                class="botao-sobre"
+            >
+                CONHEÇA MAIS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- GUIA RÁPIDO -->
+
+    <section class="guia-rapido" id="guia">
+
+        <h2>GUIA RÁPIDO</h2>
+
+        <p>
+            Veja como é simples agendar o seu atendimento na NI BEAUTY.
+        </p>
+
+
+        <div class="passos-guia">
+
+
+            <!-- PASSO 1 -->
+
+            <div class="passo">
+
+                <div class="numero">
+                    1
+                </div>
+
+                <h3>ESCOLHA O SERVIÇO</h3>
+
+                <p>
+                    Escolha o procedimento que mais combina com você.
+                </p>
+
+            </div>
+
+
+            <!-- PASSO 2 -->
+
+            <div class="passo">
+
+                <div class="numero">
+                    2
+                </div>
+
+                <h3>CLIQUE EM AGENDAR</h3>
+
+                <p>
+                    Clique no botão "Quero agendar o meu horário".
+                </p>
+
+            </div>
+
+
+            <!-- PASSO 3 -->
+
+            <div class="passo">
+
+                <div class="numero">
+                    3
+                </div>
+
+                <h3>FALE CONOSCO</h3>
+
+                <p>
+                    Você será direcionada diretamente para o nosso WhatsApp.
+                </p>
+
+            </div>
+
+
+            <!-- PASSO 4 -->
+
+            <div class="passo">
+
+                <div class="numero">
+                    4
+                </div>
+
+                <h3>CONFIRME SEU HORÁRIO</h3>
+
+                <p>
+                    Escolha o melhor dia e horário para o seu atendimento.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+
+    <footer id="rodape">
+
+        <h2>NI BEAUTY</h2>
+
+        <p>
+            Realçando a sua beleza e autoestima.
+        </p>
+
+
+        <hr class="rodape-linha">
+
+
+        <p>
+            SIGA-NOS NAS REDES SOCIAIS
+        </p>
+
+
+        <a
+            href="https://www.instagram.com/_.nibeauty?igsi=bjgxNWh4eDVmcnRk&utm_source=qr"
+            target="_blank"
+        >
+            INSTAGRAM
+        </a>
+
+
+        <a
+            href="https://wa.me/message/GGWSOWYFMJSHF1"
+            target="_blank"
+        >
+            WHATSAPP
+        </a>
+
+
+        <a
+            href="https://maps.app.goo.gl/DqnJHSMvnUDxbk8XA?g_st=ic"
+            target="_blank"
+        >
+            LOCALIZAÇÃO
+        </a>
+
+
+        <hr class="rodape-linha">
+
+
+        <p>
+            © 2026 NI BEAUTY - Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
